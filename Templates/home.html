@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+		</div>
+		<h1 >Stock Market Prediction - NIFTY 50</h1>
+		
+	</div>
+	</header>
+
+	<style>
+body{
+	font:15px/1.5 Arial, Helvetica,sans-serif;
+	padding: 0px;
+	background-color:#f4f3f3;
+}
+
+.container{
+	width:100%;
+	margin: auto;
+	overflow: hidden;
+}
+
+header{
+	background-image: url('https://www.investo.vn/wp-content/uploads/2020/09/Bull-and-Stock-Market-iStock.jpg');
+	border-bottom:#448AFF 3px solid;
+	height:600px;
+	width:100%;
+	padding-top:30px;
+
+}
+
+.main-header{
+			text-align:center;
+			background-color: blue;
+			height:100px;
+			width:100%;
+			margin:0px;
+		}
+#brandname{
+	float:left;
+	font-size:30px;
+	color: #fff;
+	margin: 10px;
+}
+
+header h1{
+	text-align:center;
+	color:#fff;
+
+}
+
+
+
+.btn-info {background-color: #2196F3;
+	height:40px;
+	width:100px;} /* Blue */
+.btn-info:hover {background: #0b7dda;}
+
+
+.resultss{
+	border-radius: 15px 50px;
+    background: #345fe4;
+    padding: 20px; 
+    width: 200px;
+    height: 150px;
+}
+
+.card{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card h3{
+  font-weight: 600;
+}
+
+.card img{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 120px;
+}
+
+.card-1{
+  background-image: url(https://th.bing.com/th/id/R.523dce864b781cea3021e0f25d39f36a?rik=rvujC3iGYqlBwg&riu=http%3a%2f%2f1.bp.blogspot.com%2f-dOYokO7qAbw%2fUGt0IgKL5FI%2fAAAAAAAANrc%2f3b1aoHBMvAA%2fs1600%2fAsian%2bPaints%2blogo%2b2012.png&ehk=2a%2bTDI1K9bpAitmrXQ46N2aZxQkbZVWTTE3EM5h1c1Q%3d&risl=&pid=ImgRaw&r=0);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-2{
+   background-image: url(https://th.bing.com/th/id/OIP.93_ftO6g8poTmzkOfjXF9gAAAA?pid=ImgDet&rs=1);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-3{
+   background-image: url(https://www.nfcw.com/wp-content/uploads/2020/06/axis-bank-logo.jpg);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-4{
+   background-image: url(https://listcarbrands.com/wp-content/uploads/2017/11/Bajaj-logo.jpg);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-5{
+   background-image: url(https://versedtech.org/wp-content/uploads/2015/12/logo-bajaj.jpg);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-6{
+   background-image: url(https://economictimes.indiatimes.com/img/69538007/Master.jpg);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-7{
+   background-image: url(https://www.indiablooms.com/finance_pic/2021/2816715473b71634280a991ce282dd20.jpg);
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+
+
+@media(max-width: 990px){
+  .card{
+    margin: 20px;
+  }
+} 
+	</style>
+
+	 <div class="ml-container">
+
+       
+        <div class="container">
+           <div class="row">
+
+
+              <div class="col-md-4">
+                 <div class="card card-1">
+                    <h3>ASIAN PAINTS</h3>
+                      <p>Asian Paints Ltd is an Indian multinational paint company, headquartered in Mumbai, Maharashtra, India. </p>
+                       <form action="{{ url_for('predict')}}" method="POST">
+                     	   <div class="form-group purple-border">
+                          <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                          <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\ASIANPAINT.csv</textarea>
+                         </div>
+		                     <br/>
+		 
+		                      <input type="submit" class="btn btn-primary" value="predict">
+		
+	                      </form>
+                       </div>
+                      </div>
+
+
+     <div class="col-md-4">
+        <div class="card card-2">
+        <h3>ADANIPORTS</h3>
+        <p>Adani Ports and Special Economic Zone Limited (APSEZ) is the largest commercial ports operator in India accounting for nearly one-fourth of the cargo movement in the country.</p>
+        <form action="{{ url_for('predict')}}" method="POST">
+                     	<div class="form-group purple-border">
+                       <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                       <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\ADANIPORTS.csv</textarea>
+                     </div>
+                       <br/>
+                    
+		 
+		                   <input type="submit" class="btn btn-primary" value="predict">
+                         </form>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="card card-3">
+        <h3>AXISBANK</h3>
+        <p>Axis Bank Limited, formerly known as UTI Bank, is an Indian banking and financial services company headquartered in Mumbai, Maharashtra. </p>
+
+         <form action="{{ url_for('predict')}}" method="POST">
+                     	<div class="form-group purple-border">
+                       <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                       <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\AXISBANK.csv</textarea>
+                      </div>
+                       <br/>
+                  
+		 
+		                   <input type="submit" class="btn btn-primary" value="predict">
+                           </form>
+           </div>
+         </div>
+
+
+      <div class="col-md-4">
+      <div class="card card-4">
+        <h3>BAJAJ-AUTO</h3>
+        <p>Bajaj Auto Limited is an Indian multinational automotive manufacturing company based in Pune. It manufactures motorcycles, scooters and auto rickshaws.</p>
+
+         <form action="{{ url_for('predict')}}" method="POST">
+                     	<div class="form-group purple-border">
+                       <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                       <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\BAJAJ-AUTO.csv</textarea>
+                      </div>
+                       <br/>
+		                
+		                   <input type="submit" class="btn btn-primary" value="predict">
+                         </form>
+           </div>
+         </div>
+
+
+         <div class="col-md-4">
+      <div class="card card-5">
+        <h3>BAJAJFINSV</h3>
+        <p>Bajaj Finserv Limited is an Indian non-banking financial services company headquartered in Pune. It is focused on lending, asset management, wealth management and insurance. </p>
+
+         <form action="{{ url_for('predict')}}" method="POST">
+                     	<div class="form-group purple-border">
+                       <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                       <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\BAJAJFINSV.csv</textarea>
+                      </div>
+                       <br/>
+		               
+		                   <input type="submit" class="btn btn-primary" value="predict">
+                          </form>
+           </div>
+         </div>
+
+
+         <div class="col-md-4">
+      <div class="card card-7">
+        <h3>BAJFINANCE</h3>
+        <p>Bajaj Finserv Limited is an Indian non-banking financial services company headquartered in Pune. It is focused on lending, asset management, wealth management and insurance.</p>
+
+         <form action="{{ url_for('predict')}}" method="POST">
+                     	<div class="form-group purple-border">
+                       <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                       <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\BAJFINANCE.csv</textarea>
+                      </div>
+                       <br/>
+		               
+		                   <input type="submit" class="btn btn-primary" value="predict">
+                          </form>
+           </div>
+         </div>
+
+
+
+         <div class="col-md-4">
+          <div class="card card-6">
+            <h3>BHARTIARTL</h3>
+            <p>Airtel is credited with pioneering the business strategy of outsourcing all of its business operations except marketing, sales and finance and building the 'minutes factory' model of low cost and high volumes. The strategy has since been adopted by several operators.</p>
+    
+             <form action="{{ url_for('predict')}}" method="POST">
+                           <div class="form-group purple-border">
+                           <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                           <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\BHARTIARTL.csv</textarea>
+                          </div>
+                           <br/>
+                       
+                           <input type="submit" class="btn btn-primary" value="predict">
+                              </form>
+               </div>
+             </div>
+
+             <div class="col-md-4">
+              <div class="card card-6">
+                <h3>BPCL</h3>
+                <p>BCPL introduced several features of many modern programming languages, including using curly braces to delimit code blocks.[3] BCPL was first implemented by Martin Richards of the University of Cambridge in 1967.</p>
+                 <form action="{{ url_for('predict')}}" method="POST">
+                               <div class="form-group purple-border">
+                               <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                               <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\BPCL.csv</textarea>
+                              </div>
+                               <br/>
+                           
+                               <input type="submit" class="btn btn-primary" value="predict">
+                                  </form>
+                   </div>
+                 </div>
+
+          
+          <div class="col-md-4">
+          <div class="card card-6">
+          <h3>BRITANNIA</h3>
+        <p>Britannia Industries Limited is an Indian company specialised in food industry, part of the Wadia Group headed by Nusli Wadia.</p>
+            
+        <form action="{{ url_for('predict')}}" method="POST">
+           <div class="form-group purple-border">
+         <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+          <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\BRITANNIA.csv</textarea>
+                        </div>
+                                   <br/>
+                               
+                                   <input type="submit" class="btn btn-primary" value="predict">
+                                      </form>
+                       </div>
+                     </div>
+               
+                     
+                 <div class="col-md-4">
+                  <div class="card card-6">
+                    <h3>CIPLA</h3>
+                    <p> Cipla primarily develops medicines to treat respiratory disease, cardiovascular disease, arthritis, diabetes, depression and many other medical conditions.</p>
+            
+                     <form action="{{ url_for('predict')}}" method="POST">
+                                   <div class="form-group purple-border">
+                                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\CIPLA.csv</textarea>
+                                  </div>
+                                   <br/>
+                               
+                                   <input type="submit" class="btn btn-primary" value="predict">
+                                      </form>
+                       </div>
+                     </div>
+                   
+                     <div class="col-md-4">
+                      <div class="card card-6">
+                        <h3>COALINDIA</h3>
+                        <p>Coal India Limited (CIL) is an Indian central public sector undertaking under the ownership of the Ministry of Coal, Government of India. It is headquartered at Kolkata.</p>
+                
+                         <form action="{{ url_for('predict')}}" method="POST">
+                                       <div class="form-group purple-border">
+                                       <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                                       <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\COALINDIA.csv</textarea>
+                                      </div>
+                                       <br/>
+                                   
+                                       <input type="submit" class="btn btn-primary" value="predict">
+                                          </form>
+                           </div>
+                         </div>
+
+                         <div class="col-md-4">
+                          <div class="card card-6">
+                            <h3>DRREDDY</h3>
+                            <p>Dr. Reddy's Laboratories is an Indian multinational pharmaceutical company located in Hyderabad, Telangana, India. </p>
+                    
+                             <form action="{{ url_for('predict')}}" method="POST">
+                                           <div class="form-group purple-border">
+                                           <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                                           <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\DRREDDY.csv</textarea>
+                                          </div>
+                                           <br/>
+                                       
+                                           <input type="submit" class="btn btn-primary" value="predict">
+                                              </form>
+                               </div>
+                             </div>
+
+                             
+                         <div class="col-md-4">
+                          <div class="card card-6">
+                            <h3>EICHERMOT</h3>
+                            <p> Eicher Motors Limited is an Indian multinational automotive company that manufactures motorcycles and commercial vehicles, headquartered in New Delhi.</p>
+                    
+                             <form action="{{ url_for('predict')}}" method="POST">
+                                           <div class="form-group purple-border">
+                                           <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                                           <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\EICHERMOT.csv</textarea>
+                                          </div>
+                                           <br/>
+                                       
+                                           <input type="submit" class="btn btn-primary" value="predict">
+                                              </form>
+                               </div>
+                             </div>
+
+                             <div class="col-md-4">
+                              <div class="card card-6">
+                                <h3>GAIL</h3>
+                                <p>GAIL (India) Limited is a central public sector undertaking under the ownership of Ministry of Petroleum and Natural Gas, Government of India.</p>
+                        
+                                 <form action="{{ url_for('predict')}}" method="POST">
+                                               <div class="form-group purple-border">
+                                               <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                                               <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\GAIL.csv</textarea>
+                                              </div>
+                                               <br/>
+                                           
+                                               <input type="submit" class="btn btn-primary" value="predict">
+                                                  </form>
+                                   </div>
+                                 </div>
+                                 
+                         
+                     
+                    <div class="col-md-4">
+                              <div class="card card-6">
+                                <h3>GRASIM</h3>
+                                <p>Grasim Industries Limited is an Indian manufacturing company based in Mumbai. Since its inception in 1947 as a textile manufacturer,</p>
+                        
+                                 <form action="{{ url_for('predict')}}" method="POST">
+                                               <div class="form-group purple-border">
+                                               <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                                               <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\GRASIM.csv</textarea>
+                                              </div>
+                                               <br/>
+                                           
+                                               <input type="submit" class="btn btn-primary" value="predict">
+                                                  </form>
+                                   </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card card-6">
+                        <h3>HCLTECH</h3>
+                        <p> HCLTech is an Indian multinational information technology (IT) services and consulting company headquartered in Noida, Uttar Pradesh.</p>
+                
+                         <form action="{{ url_for('predict')}}" method="POST">
+                                       <div class="form-group purple-border">
+                                       <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                                       <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\HCLTECH.csv</textarea>
+                                      </div>
+                                       <br/>
+                                   
+                                       <input type="submit" class="btn btn-primary" value="predict">
+                                          </form>
+                           </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-6">
+                <h3>HDFC</h3>
+                <p> It is a major housing finance provider in India. It also has a presence in banking, life and general insurance, asset management, venture capital, realty, education, deposits and education loans. </p>
+        
+                 <form action="{{ url_for('predict')}}" method="POST">
+                               <div class="form-group purple-border">
+                               <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                               <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\HDFC.csv</textarea>
+                              </div>
+                               <br/>
+                           
+                               <input type="submit" class="btn btn-primary" value="predict">
+                                  </form>
+                   </div>
+         </div>
+
+         <div class="col-md-4">
+          <div class="card card-6">
+            <h3>HDFCBANK</h3>
+            <p>HDFC Bank Limited is an Indian banking and financial services company headquartered in Mumbai.</p>
+    
+             <form action="{{ url_for('predict')}}" method="POST">
+                           <div class="form-group purple-border">
+                           <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                           <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\HDFCBANK.csv</textarea>
+                          </div>
+                           <br/>
+                       
+                           <input type="submit" class="btn btn-primary" value="predict">
+                              </form>
+               </div>
+</div>
+
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>HEROMOTOCO</h3>
+    <p>Hero MotoCorp Limited, formerly Hero Honda, is an Indian multinational motorcycle and scooter manufacturer headquartered in New Delhi</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\HEROMOTOCO.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>HINDALCO</h3>
+    <p> Hindalco Industries Limited an Indian aluminium and copper manufacturing company, is a subsidiary of the Aditya Birla Group</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\HINDALCO.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+ 
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>HINDUNILVR</h3>
+    <p>Hindustan Unilever Limited (HUL) is a consumer goods company headquartered in Mumbai, India.</p>
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\HINDUNILVR.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>ICICIBANK</h3>
+    <p>ICICI Bank Limited is an Indian Private bank. It is headquartered at Mumbai. </p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\ICICIBANK.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>INDUSINDBK</h3>
+    <p>IndusInd Bank Limited is an Indian financial services headquartered in Mumbai (Maharashtra). The bank offers commercial, transactional and electronic banking products and services.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\INDUSINDBK.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+ 
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>INFRATEL</h3>
+    <p>Bharti Infratel Limited is a telecommunications infrastructure company which provides telecom infrastructure such as telecom towers fiber networks </p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\INFRATEL.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>INFY</h3>
+    <p>Infosys Limited is an Indian multinational information technology company that provides business consulting, information technology</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\INFY.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+ 
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>IOC</h3>
+    <p>The International Olympic Committee is a non-governmental sports organisation based in Lausanne, Switzerland.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\IOC.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>ITC</h3>
+    <p> ITC Limited is an Indian conglomerate company headquartered in Kolkata. ... ITC has a diversified presence across industries such as FMCG, hotels</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\ITC.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>JSWSTEEL</h3>
+    <p>JSW Steel Limited is an Indian multinational steel producer based in Mumbai and is a flagship company of the JSW Group.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\JSWSTEEL.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>KOTAKBANK</h3>
+    <p>Kotak Mahindra Bank Limited is an Indian banking and financial services company headquartered in Mumbai.</p>
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\KOTAKBANK.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+  
+   
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>LT</h3>
+    <p>Larsen & Toubro Ltd, commonly known as L&T, is an Indian multinational conglomerate company, with business interests in engineering</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\LT.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>MARUTI</h3>
+    <p>Maruti Suzuki India Limited, formerly known as Maruti Udyog Limited, is an Indian automobile manufacturer, based in New Delhi.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\MARUTI.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>MM</h3>
+    <p>MM is a Japanese light novel series by Akinari Matsuno, with illustrations provided by the group QP:flapper made up of Tometa Ohara and Koharu Sakura.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\MM.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+  
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>NESTLEIND</h3>
+    <p>Nestlé India Limited is the Indian subsidiary of Nestlé which is a Swiss multinational company. The company is headquartered in Gurgaon.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\NESTLEIND.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+  
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>NIFTY50_all</h3>
+    <p>The NIFTY 50 is a benchmark Indian stock market index that represents the weighted average of 50 of the largest Indian companies listed on the National</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\NIFTY50_all.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+  
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>NTPC</h3>
+    <p>NTPC Limited, formerly known as National Thermal Power Corporation Limited, is an Indian central public sector undertaking under the ownership of Ministry</p>
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\NTPC.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+  
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>ONGC</h3>
+    <p>The Oil and Natural Gas Corporation (ONGC) is a central public sector undertaking under the ownership of Ministry of Petroleum and Natural Gas</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\ONGC.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+  
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>POWERGRID</h3>
+    <p>Power Grid Corporation of India Limited is an Indian central public sector undertaking under the ownership of Ministry of Power, Government of India.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\POWERGRID.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+  
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>RELIANCE</h3>
+    <p>Reliance Industries Limited is an Indian multinational conglomerate company, headquartered in Mumbai.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\RELIANCE.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>SBIN</h3>
+    <p>State Bank of India (SBI) is an Indian multinational public sector bank and financial services statutory body headquartered in Mumbai</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\SBIN.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+  
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>SHREECEM</h3>
+    <p>Shree Cement is an Indian cement manufacturer, founded in Beawar, Rajasthan, in 1979. Now headquartered in Kolkata it is one of the biggest cement makers</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\SHREECEM.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+  
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>SUNPHARMA</h3>
+    <p>Sun Pharmaceutical Industries Limited is an Indian multinational pharmaceutical company headquartered in Mumbai, Maharashtra,</p>
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\SUNPHARMA.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>TATAMOTORS</h3>
+    <p>Tata Motors Limited is an Indian multinational automotive manufacturing company, headquartered in Mumbai, India, which is part of the Tata Group</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\TATAMOTORS.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>TATASTEEL</h3>
+    <p>Tata Steel Limited is an Indian multinational steel-making company, based in Jamshedpur, Jharkhand and headquartered in Mumbai, Maharashtra.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\TATASTEEL.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>  
+  
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>TCS</h3>
+    <p>Tata Consultancy Services (TCS) is an Indian multinational information technology (IT) services and consulting company with its headquarters in Mumbai.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\TCS.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>TECHM</h3>
+    <p>Tech Mahindra is an Indian multinational information technology services and consulting company. Part of the Mahindra Group</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\TECHM.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>TITAN</h3>
+    <p>Titan Company Limited is an Indian company that mainly manufactures fashion accessories such as jewellery, watches and eyewear.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\TITAN.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+ 
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>ULTRACEMCO</h3>
+    <p>UltraTech is the largest manufacturer of grey cement, ready-mix concrete (RMC) and white cement in India</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\ULTRACEMCO.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+ 
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>UPL</h3>
+    <p>UPL Limited, formerly United Phosphorus Limited, is an Indian multinational company that manufactures and markets agrochemicals, industrial chemicals, chemical intermediates, and specialty chemicals, and also offers crop protection solutions.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\UPL.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+ 
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>VEDL</h3>
+    <p>Vedanta Limited is an Indian multinational mining company headquartered in Mumbai, India, with its main operations in iron ore.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\VEDL.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>WIPRO</h3>
+    <p>Wipro Limited is an Indian multinational corporation that provides information technology, consulting and business process services.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\WIPRO.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card card-6">
+    <h3>ZEEL</h3>
+    <p>Zee Entertainment Enterprises (formerly Zee Telefilms) is an Indian media conglomerate owned by Essel Group and Culver Max Entertainment.</p>
+
+     <form action="{{ url_for('predict')}}" method="POST">
+                   <div class="form-group purple-border">
+                   <label for="exampleFormControlTextarea4" color="blue">Dataset Used</label>
+                   <textarea class="form-control" name="message">E:\ML\stock_prj\Templates\ZEEL.csv</textarea>
+                  </div>
+                   <br/>
+               
+                   <input type="submit" class="btn btn-primary" value="predict">
+                      </form>
+       </div>
+</div>
+
+
+
+
+         </div>
+        </div>
+      </div>
+  </body>
+</html>
